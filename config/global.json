@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "NVD3 Pull Request Examples": {
+            "applicationId": "udpU1rNLzMK3RhKzdYrVqo09zS1lciuBqGxgwlwL", 
+            "masterKey": "Ba58zBSr5tbpJYjzpdCELIZaF446H26PjQhQd7Z5"
+        }, 
+        "_default": {
+            "link": "NVD3 Pull Request Examples"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.4.2"
+    }
+}

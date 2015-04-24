@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <script data-require="d3@3.3.13" data-semver="3.3.13" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.3.13/d3.js"></script>
+    <script src="nvd3.js"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/novus/nvd3/v1.7.1/build/nv.d3.css" />
+  </head>
+
+  <body>
+    <style>
+    #chart svg {
+      height: 700px;
+      width:90%;
+      margin:0 auto;
+    }
+  </style>
+    <h3> Select "Expanded" to see difference from regular behavior in 
+        <a href="broken.html">this example</a>.
+    </h3>
+    <p> See nvd3.js file here and search for "// FIX FOR EXPANDED VIEW" to see the changes</p>
+    <div id="chart">
+      <svg></svg>
+    </div>
+    <script>
+      nv.addGraph(function () {
+        var chart = nv.models.stackedAreaChart()
+                      .x(function (d) { return d.x })
+                      .y(function (d) { return d.y })
+                      .clipEdge(true)
+                      .useInteractiveGuideline(true);
+
+        chart.xAxis
+            .showMaxMin(false)
+            .tickFormat(function (d) {
+                return d3.time.format('%x')(new Date(d))
+            })
+
+        d3.select('#chart svg')
+          .datum(data)
+            .transition().duration(500).call(chart);
+
+        nv.utils.windowResize(chart.update);
+
+        return chart;
+    });
+  
+  
+    var data =
+      [{
+        "key": "Adidas",
+        "values": [{
+          "x": Number(new Date("2014-08-30T07:00:00.000Z")),
+          "y": 0,
+          "index": 0,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2014-09-06T07:00:00.000Z")),
+          "y": 0,
+          "index": 1,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2014-09-13T07:00:00.000Z")),
+          "y": 0,
+          "index": 2,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2014-09-20T07:00:00.000Z")),
+          "y": 0,
+          "index": 3,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2014-09-27T07:00:00.000Z")),
+          "y": 0,
+          "index": 4,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2014-10-04T07:00:00.000Z")),
+          "y": 0,
+          "index": 5,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2014-10-11T07:00:00.000Z")),
+          "y": 0,
+          "index": 6,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2014-10-18T07:00:00.000Z")),
+          "y": 0,
+          "index": 7,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2014-10-25T07:00:00.000Z")),
+          "y": 0,
+          "index": 8,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2014-11-01T07:00:00.000Z")),
+          "y": 0,
+          "index": 9,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2014-11-08T08:00:00.000Z")),
+          "y": 0,
+          "index": 10,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2014-11-15T08:00:00.000Z")),
+          "y": 0,
+          "index": 11,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2014-11-22T08:00:00.000Z")),
+          "y": 0,
+          "index": 12,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2014-11-29T08:00:00.000Z")),
+          "y": 0,
+          "index": 13,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2014-12-06T08:00:00.000Z")),
+          "y": 0,
+          "index": 14,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2014-12-13T08:00:00.000Z")),
+          "y": 0,
+          "index": 15,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2014-12-20T08:00:00.000Z")),
+          "y": 0,
+          "index": 16,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2014-12-27T08:00:00.000Z")),
+          "y": 0,
+          "index": 17,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2015-01-03T08:00:00.000Z")),
+          "y": 0,
+          "index": 18,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2015-01-10T08:00:00.000Z")),
+          "y": 0,
+          "index": 19,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2015-01-17T08:00:00.000Z")),
+          "y": 0,
+          "index": 20,
+          "seriesIndex": 0,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2015-01-24T08:00:00.000Z")),
+          "y": 1,
+          "index": 21,
+          "seriesIndex": 0,
+          "display": {
+            "y": 1,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2015-01-31T08:00:00.000Z")),
+          "y": 22,
+          "index": 22,
+          "seriesIndex": 0,
+          "display": {
+            "y": 22,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2015-02-07T08:00:00.000Z")),
+          "y": 72,
+          "index": 23,
+          "seriesIndex": 0,
+          "display": {
+            "y": 72,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2015-02-14T08:00:00.000Z")),
+          "y": 20,
+          "index": 24,
+          "seriesIndex": 0,
+          "display": {
+            "y": 20,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2015-02-21T08:00:00.000Z")),
+          "y": 4,
+          "index": 25,
+          "seriesIndex": 0,
+          "display": {
+            "y": 4,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2015-02-28T08:00:00.000Z")),
+          "y": 19,
+          "index": 26,
+          "seriesIndex": 0,
+          "display": {
+            "y": 19,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2015-03-07T08:00:00.000Z")),
+          "y": 5,
+          "index": 27,
+          "seriesIndex": 0,
+          "display": {
+            "y": 5,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2015-03-14T07:00:00.000Z")),
+          "y": 2,
+          "index": 28,
+          "seriesIndex": 0,
+          "display": {
+            "y": 2,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2015-03-21T07:00:00.000Z")),
+          "y": 8,
+          "index": 29,
+          "seriesIndex": 0,
+          "display": {
+            "y": 8,
+            "y0": 0
+          },
+          "series": 0
+        }, {
+          "x": Number(new Date("2015-03-28T07:00:00.000Z")),
+          "y": 3,
+          "index": 30,
+          "seriesIndex": 0,
+          "display": {
+            "y": 3,
+            "y0": 0
+          },
+          "series": 0
+        }],
+        "seriesIndex": 0
+      }, {
+        "key": "Nike",
+        "values": [{
+          "x": Number(new Date("2014-08-30T07:00:00.000Z")),
+          "y": 0,
+          "index": 0,
+          "seriesIndex": 1,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2014-09-06T07:00:00.000Z")),
+          "y": 4,
+          "index": 1,
+          "seriesIndex": 1,
+          "display": {
+            "y": 4,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2014-09-13T07:00:00.000Z")),
+          "y": 6,
+          "index": 2,
+          "seriesIndex": 1,
+          "display": {
+            "y": 6,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2014-09-20T07:00:00.000Z")),
+          "y": 0,
+          "index": 3,
+          "seriesIndex": 1,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2014-09-27T07:00:00.000Z")),
+          "y": 16,
+          "index": 4,
+          "seriesIndex": 1,
+          "display": {
+            "y": 16,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2014-10-04T07:00:00.000Z")),
+          "y": 12,
+          "index": 5,
+          "seriesIndex": 1,
+          "display": {
+            "y": 12,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2014-10-11T07:00:00.000Z")),
+          "y": 8,
+          "index": 6,
+          "seriesIndex": 1,
+          "display": {
+            "y": 8,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2014-10-18T07:00:00.000Z")),
+          "y": 0,
+          "index": 7,
+          "seriesIndex": 1,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2014-10-25T07:00:00.000Z")),
+          "y": 0,
+          "index": 8,
+          "seriesIndex": 1,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2014-11-01T07:00:00.000Z")),
+          "y": 10,
+          "index": 9,
+          "seriesIndex": 1,
+          "display": {
+            "y": 10,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2014-11-08T08:00:00.000Z")),
+          "y": 9,
+          "index": 10,
+          "seriesIndex": 1,
+          "display": {
+            "y": 9,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2014-11-15T08:00:00.000Z")),
+          "y": 4,
+          "index": 11,
+          "seriesIndex": 1,
+          "display": {
+            "y": 4,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2014-11-22T08:00:00.000Z")),
+          "y": 4,
+          "index": 12,
+          "seriesIndex": 1,
+          "display": {
+            "y": 4,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2014-11-29T08:00:00.000Z")),
+          "y": 4,
+          "index": 13,
+          "seriesIndex": 1,
+          "display": {
+            "y": 4,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2014-12-06T08:00:00.000Z")),
+          "y": 0,
+          "index": 14,
+          "seriesIndex": 1,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2014-12-13T08:00:00.000Z")),
+          "y": 0,
+          "index": 15,
+          "seriesIndex": 1,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2014-12-20T08:00:00.000Z")),
+          "y": 0,
+          "index": 16,
+          "seriesIndex": 1,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2014-12-27T08:00:00.000Z")),
+          "y": 0,
+          "index": 17,
+          "seriesIndex": 1,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2015-01-03T08:00:00.000Z")),
+          "y": 3,
+          "index": 18,
+          "seriesIndex": 1,
+          "display": {
+            "y": 3,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2015-01-10T08:00:00.000Z")),
+          "y": 12,
+          "index": 19,
+          "seriesIndex": 1,
+          "display": {
+            "y": 12,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2015-01-17T08:00:00.000Z")),
+          "y": 13,
+          "index": 20,
+          "seriesIndex": 1,
+          "display": {
+            "y": 13,
+            "y0": 0
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2015-01-24T08:00:00.000Z")),
+          "y": 7,
+          "index": 21,
+          "seriesIndex": 1,
+          "display": {
+            "y": 7,
+            "y0": 1
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2015-01-31T08:00:00.000Z")),
+          "y": 11,
+          "index": 22,
+          "seriesIndex": 1,
+          "display": {
+            "y": 11,
+            "y0": 22
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2015-02-07T08:00:00.000Z")),
+          "y": 10,
+          "index": 23,
+          "seriesIndex": 1,
+          "display": {
+            "y": 10,
+            "y0": 72
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2015-02-14T08:00:00.000Z")),
+          "y": 8,
+          "index": 24,
+          "seriesIndex": 1,
+          "display": {
+            "y": 8,
+            "y0": 20
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2015-02-21T08:00:00.000Z")),
+          "y": 17,
+          "index": 25,
+          "seriesIndex": 1,
+          "display": {
+            "y": 17,
+            "y0": 4
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2015-02-28T08:00:00.000Z")),
+          "y": 20,
+          "index": 26,
+          "seriesIndex": 1,
+          "display": {
+            "y": 20,
+            "y0": 19
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2015-03-07T08:00:00.000Z")),
+          "y": 28,
+          "index": 27,
+          "seriesIndex": 1,
+          "display": {
+            "y": 28,
+            "y0": 5
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2015-03-14T07:00:00.000Z")),
+          "y": 47,
+          "index": 28,
+          "seriesIndex": 1,
+          "display": {
+            "y": 47,
+            "y0": 2
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2015-03-21T07:00:00.000Z")),
+          "y": 36,
+          "index": 29,
+          "seriesIndex": 1,
+          "display": {
+            "y": 36,
+            "y0": 8
+          },
+          "series": 1
+        }, {
+          "x": Number(new Date("2015-03-28T07:00:00.000Z")),
+          "y": 34,
+          "index": 30,
+          "seriesIndex": 1,
+          "display": {
+            "y": 34,
+            "y0": 3
+          },
+          "series": 1
+        }],
+        "seriesIndex": 1
+      }, {
+        "key": "Puma",
+        "values": [{
+          "x": Number(new Date("2014-08-30T07:00:00.000Z")),
+          "y": 0,
+          "index": 0,
+          "seriesIndex": 2,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2014-09-06T07:00:00.000Z")),
+          "y": 1,
+          "index": 1,
+          "seriesIndex": 2,
+          "display": {
+            "y": 1,
+            "y0": 4
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2014-09-13T07:00:00.000Z")),
+          "y": 1,
+          "index": 2,
+          "seriesIndex": 2,
+          "display": {
+            "y": 1,
+            "y0": 6
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2014-09-20T07:00:00.000Z")),
+          "y": 1,
+          "index": 3,
+          "seriesIndex": 2,
+          "display": {
+            "y": 1,
+            "y0": 0
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2014-09-27T07:00:00.000Z")),
+          "y": 0,
+          "index": 4,
+          "seriesIndex": 2,
+          "display": {
+            "y": 0,
+            "y0": 16
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2014-10-04T07:00:00.000Z")),
+          "y": 0,
+          "index": 5,
+          "seriesIndex": 2,
+          "display": {
+            "y": 0,
+            "y0": 12
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2014-10-11T07:00:00.000Z")),
+          "y": 1,
+          "index": 6,
+          "seriesIndex": 2,
+          "display": {
+            "y": 1,
+            "y0": 8
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2014-10-18T07:00:00.000Z")),
+          "y": 0,
+          "index": 7,
+          "seriesIndex": 2,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2014-10-25T07:00:00.000Z")),
+          "y": 0,
+          "index": 8,
+          "seriesIndex": 2,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2014-11-01T07:00:00.000Z")),
+          "y": 0,
+          "index": 9,
+          "seriesIndex": 2,
+          "display": {
+            "y": 0,
+            "y0": 10
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2014-11-08T08:00:00.000Z")),
+          "y": 1,
+          "index": 10,
+          "seriesIndex": 2,
+          "display": {
+            "y": 1,
+            "y0": 9
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2014-11-15T08:00:00.000Z")),
+          "y": 0,
+          "index": 11,
+          "seriesIndex": 2,
+          "display": {
+            "y": 0,
+            "y0": 4
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2014-11-22T08:00:00.000Z")),
+          "y": 0,
+          "index": 12,
+          "seriesIndex": 2,
+          "display": {
+            "y": 0,
+            "y0": 4
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2014-11-29T08:00:00.000Z")),
+          "y": 0,
+          "index": 13,
+          "seriesIndex": 2,
+          "display": {
+            "y": 0,
+            "y0": 4
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2014-12-06T08:00:00.000Z")),
+          "y": 2,
+          "index": 14,
+          "seriesIndex": 2,
+          "display": {
+            "y": 2,
+            "y0": 0
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2014-12-13T08:00:00.000Z")),
+          "y": 0,
+          "index": 15,
+          "seriesIndex": 2,
+          "display": {
+            "y": 0,
+            "y0": 0
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2014-12-20T08:00:00.000Z")),
+          "y": 1,
+          "index": 16,
+          "seriesIndex": 2,
+          "display": {
+            "y": 1,
+            "y0": 0
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2014-12-27T08:00:00.000Z")),
+          "y": 1,
+          "index": 17,
+          "seriesIndex": 2,
+          "display": {
+            "y": 1,
+            "y0": 0
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2015-01-03T08:00:00.000Z")),
+          "y": 0,
+          "index": 18,
+          "seriesIndex": 2,
+          "display": {
+            "y": 0,
+            "y0": 3
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2015-01-10T08:00:00.000Z")),
+          "y": 0,
+          "index": 19,
+          "seriesIndex": 2,
+          "display": {
+            "y": 0,
+            "y0": 12
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2015-01-17T08:00:00.000Z")),
+          "y": 0,
+          "index": 20,
+          "seriesIndex": 2,
+          "display": {
+            "y": 0,
+            "y0": 13
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2015-01-24T08:00:00.000Z")),
+          "y": 0,
+          "index": 21,
+          "seriesIndex": 2,
+          "display": {
+            "y": 0,
+            "y0": 8
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2015-01-31T08:00:00.000Z")),
+          "y": 16,
+          "index": 22,
+          "seriesIndex": 2,
+          "display": {
+            "y": 16,
+            "y0": 33
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2015-02-07T08:00:00.000Z")),
+          "y": 23,
+          "index": 23,
+          "seriesIndex": 2,
+          "display": {
+            "y": 23,
+            "y0": 82
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2015-02-14T08:00:00.000Z")),
+          "y": 45,
+          "index": 24,
+          "seriesIndex": 2,
+          "display": {
+            "y": 45,
+            "y0": 28
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2015-02-21T08:00:00.000Z")),
+          "y": 27,
+          "index": 25,
+          "seriesIndex": 2,
+          "display": {
+            "y": 27,
+            "y0": 21
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2015-02-28T08:00:00.000Z")),
+          "y": 27,
+          "index": 26,
+          "seriesIndex": 2,
+          "display": {
+            "y": 27,
+            "y0": 39
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2015-03-07T08:00:00.000Z")),
+          "y": 28,
+          "index": 27,
+          "seriesIndex": 2,
+          "display": {
+            "y": 28,
+            "y0": 33
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2015-03-14T07:00:00.000Z")),
+          "y": 35,
+          "index": 28,
+          "seriesIndex": 2,
+          "display": {
+            "y": 35,
+            "y0": 49
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2015-03-21T07:00:00.000Z")),
+          "y": 30,
+          "index": 29,
+          "seriesIndex": 2,
+          "display": {
+            "y": 30,
+            "y0": 44
+          },
+          "series": 2
+        }, {
+          "x": Number(new Date("2015-03-28T07:00:00.000Z")),
+          "y": 26,
+          "index": 30,
+          "seriesIndex": 2,
+          "display": {
+            "y": 26,
+            "y0": 37
+          },
+          "series": 2
+        }],
+        "seriesIndex": 2
+      }]
+
+
+
+    </script>
+  </body>
+
+</html>
